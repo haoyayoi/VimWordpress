@@ -699,8 +699,7 @@ def view_switch(view = "", assert_view = "", reset = False):
                     #from list view
                     if g_data.view == "list":
                         for v in list(g_data.LIST_VIEW_KEY_MAP.values()):
-                            if vim.eval("mapcheck('%s')" % v):
-                                vim.command('unmap <buffer> %s' % v)
+                            vim.command('map <buffer> %s %s' % (v, v))
 
                     g_data.view = view
 
@@ -807,8 +806,7 @@ def blog_edit(edit_type, post_id):
     vim.command('setl nomodified')
     vim.command('setl textwidth=0')
     for v in list(G.LIST_VIEW_KEY_MAP.values()):
-        if vim.eval("mapcheck('%s')" % v):
-            vim.command('unmap <buffer> %s' % v)
+        vim.command('map <buffer> %s %s' % (v,v))
 
 
 @view_switch(assert_view = "list")
