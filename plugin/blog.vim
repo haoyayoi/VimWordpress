@@ -1053,3 +1053,5 @@ def blog_config_switch(index = -1, refresh_list = False):
     if refresh_list:
         blog_list(keep_type = True)
     echomsg("Vimpress switched to '%s'@'%s'" % (g_data.blog_username, g_data.blog_url))
+
+EOF
